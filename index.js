@@ -14,6 +14,8 @@ const app = createApp({
             products : [],
             // isNew 用於判斷當前 Modal 是新增或編輯 Modal
             isNew : false,
+            /*tempProduct: {} 裡面還有 imagesUrl: [] 只是預先定義，避免取值出錯，
+            如果確定不會出錯，不寫也可以*/
             tempProduct: {
                 imagesUrl: []
             }
@@ -117,7 +119,9 @@ const app = createApp({
             deleteModel.hide();
             myModal.hide();
         },
-        //
+        /*createImages() 的 imagesUrl = [] 
+        是避免在編輯產品時如果沒有 imagesUrl 屬性去執行接下來的 push 而出錯
+        push('') 是用來新增一個空的 input 讓使用者可以填寫要新增的圖片網址 */
         createImages(){
             this.tempProduct.imagesUrl = [];
             this.tempProduct.imagesUrl.push('');
