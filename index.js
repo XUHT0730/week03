@@ -67,7 +67,7 @@ const app = createApp({
                 再將 isNew 的值改為 false，最後開啟 myModal */
             else if(status === 'edit'){
                 this.tempProduct = {...item};
-                this.new = false;
+                this.isNew = false;
                 myModal.show();
             }
               /* 若 status 為 ‘delete’，表示點擊到刪除按鈕，
